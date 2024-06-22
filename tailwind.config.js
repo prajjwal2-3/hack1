@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        primary:'#FBB7B7',
+        secondary:'#E6A7A7'
+      }
+    },
   },
   plugins: [],
 }
