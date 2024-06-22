@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Searchbar() {
   return (
-    <input className='rounded-full h-10 px-6 text-white w-4/12 bg-secondary'
-    placeholder='Search Event, Organization & etc'
-    ></input>
+    <div className='w-full outline-none rounded-full h-12 bg-blue-400 border-2 flex justify-center items-center border-blue-600 px-4' >
+      <input type="text" className='w-full bg-transparent outline-none ' name="" id="" />
+    </div>
   )
 }

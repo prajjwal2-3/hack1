@@ -25,7 +25,7 @@ const Carousel = () => {
                    
                     src={images[currentImageIndex]}
                     alt={`Slide }`}
-                    className={` rounded-2xl w-7/12 shadow-lg inset-0  h-full object-cover transition-opacity duration-1000 `}
+                    className={` rounded-2xl w-full md:w-7/12 shadow-lg inset-0  h-full object-cover transition-opacity duration-1000 `}
                 />
           
            
@@ -33,7 +33,7 @@ const Carousel = () => {
                    
                     src={images[(currentImageIndex+1)%images.length]}
                     alt={`Slide }`}
-                    className={` rounded-2xl w-4/12 inset-0 shadow-lg h-full object-cover transition-opacity duration-1000 `}
+                    className={` rounded-2xl w-4/12 hidden md:flex inset-0 shadow-lg h-full object-cover transition-opacity duration-1000 `}
                 />
             
         </div>
