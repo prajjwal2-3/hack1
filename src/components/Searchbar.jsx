@@ -1,9 +1,17 @@
 import React from 'react'
+import Button from './Button'
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Searchbar() {
   return (
-    <div className='w-full outline-none rounded-full h-12 bg-blue-400 border-2 flex justify-center items-center border-blue-600 px-4' >
-      <input type="text" className='w-full bg-transparent outline-none ' name="" id="" />
+    <>
+    <div className='md:hidden flex'>
+      <Button prop={<SearchIcon/>} />
     </div>
+    <div className='hidden outline-none  md:flex justify-between gap-2  items-center' >
+      <input type="text" className='md:w-[15rem] h-8 bg-body outline-none border-[1px] px-5 py-5   rounded-full border-gray-300 ' name="" id="" placeholder='Search Organisation'/>
+      <Button prop={'Search'}/>
+    </div>
+    </>
   )
 }

@@ -3,7 +3,7 @@ import Carousel from './Carousel'
 
 export default function Hero() {
   return (
-    <div className='p-10 bg-blue-300 w-full'>
+    <div className='p-10 bg-body w-full'>
       <Carousel/>
     </div>
   )

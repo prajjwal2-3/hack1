@@ -7,8 +7,12 @@ export default {
   theme: {
     extend: {
       colors:{
-        primary:'#FBB7B7',
-        secondary:'#E6A7A7'
+        "navbar":'#002C3E',
+       "body":'#F6F6F6',
+        "button":"#230c69"
+      //   "navbar":'',
+      //  "body":'#F6F6F6',#002C3E
+      //   "button":"#287094"
       }
     },
   },
