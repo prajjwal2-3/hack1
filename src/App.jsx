@@ -3,10 +3,11 @@ import { useState } from 'react'
 import Header from './components/Header'
 import Hero from './components/Home/Hero'
 import Categories from './components/Home/Categories'
+import Popular from './components/Home/Popular'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
   
@@ -14,6 +15,7 @@ function App() {
        <Header/>
      <Hero/>
     <Categories/>
+    <Popular/>
   </div>
     
   )
