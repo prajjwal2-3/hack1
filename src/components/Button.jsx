@@ -1,10 +1,11 @@
 import React from 'react'
 
 
-export default function Button({prop}) {
+const Button = ({ className, text, onClick }) => {
   return (
-    <div>
-      <button className='px-4 py-2 rounded-full bg-button  text-white font-medium  '>{prop}</button>
-    </div>
-  )
-}
+    <button className={className} onClick={onClick}>
+      {text}
+    </button>
+  );
+};
+export default Button;

@@ -1,18 +1,21 @@
 import { useState } from 'react'
-import TopOrg from './components/TopOrganization'
+
 import Header from './components/Header'
-import Hero from './components/Hero'
+import Hero from './components/Home/Hero'
+import Categories from './components/Home/Categories'
 
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-   <>
-     <Header/>
+  
+  <div className="min-h-screen w-full">
+       <Header/>
      <Hero/>
-     <TopOrg/>
-    </>
+    <Categories/>
+  </div>
+    
   )
 }
 
