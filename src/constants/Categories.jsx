@@ -54,3 +54,30 @@ export const PopularEvent = [
         image:'https://image.volunteerworld.com/feaf6c492f97c7a08eb4a615dbafe844f62d386f/Portfolio-India-Medical.jpg'
     },
 ]
+
+export const Organizations = [
+    {
+        name:'International Volunteer HQ',
+        image:'https://upload.wikimedia.org/wikipedia/en/9/94/International_Volunteer_HQ_Logo.png'
+    },
+    {
+        name:'VolunteerMatch',
+        image:'https://upload.wikimedia.org/wikipedia/commons/e/ea/VolunteerMatch_official.png'
+    },
+    {
+        name:'Service Civil International',
+        image:'https://sci.ngo/wp-content/uploads/sci_logo_blue-2.png'
+    },
+    {
+        name:'Global Volunteers',
+        image:'https://yt3.googleusercontent.com/ytc/AIdro_mc9kXFfBqq4JDymqPUw98MayxwFOEnYvqLLX33KtEnng=s900-c-k-c0x00ffffff-no-rj'
+    },
+    {
+        name:'Love Volunteers',
+        image:'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQhq71UAAaz_8La2zU_0F5Gtvc6fq9S_D1p9A-D_e8M8jKOT1QJ'
+    },
+    {
+        name:'National NGO Confederations',
+        image:'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSVRh4l88q0ES48M8fyfFkp0M7EtD__lUaA9x0gxwKW_boapK6a'
+    },
+]
