@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import CreateAccount from './components/autorization/CreateAccount'
 import Login  from './components/autorization/Login'
+import Footer from './components/footer/Footer'
 
 
 function App() {
@@ -11,8 +12,10 @@ function App() {
 
   return (
    <>
-   {/* <CreateAccount/> */}
    {/* <Login/> */}
+   <Footer/>
+   {/* <CreateAccount/> */}
+   
   
      {/* <Header/>
      <Hero/>
