@@ -8,12 +8,12 @@ export default {
     extend: {
       colors:{
         "navbar":'#002C3E',
-       "body":'#F6F6F6',
+       "body":'#272342',
         "button":"#230c69"
       //   "navbar":'',
       //  "body":'#F6F6F6',#002C3E
       //   "button":"#287094"
-      }
+      },
     },
   },
   plugins: [],
