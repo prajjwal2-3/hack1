@@ -11,22 +11,20 @@ import { isAuthenticated } from "../utils/auth";
 import Myorg from "./components/org/Myorg";
 import { useSelector } from "react-redux";
 import Organization from "./components/org/Organization";
+import Organizationdetail from "./components/org/Organizationdetail";
 function App() {
-
   return (
     <div className="min-h-screen w-full">
-      <Header isAuthenticated={isAuthenticated()}/>
-      <Outlet/>
+      <Header isAuthenticated={isAuthenticated()} />
+      <Outlet />
     </div>
   );
 }
 
-export const router = createBrowserRouter(
-  
-  [
+export const router = createBrowserRouter([
   {
     path: "/",
-    element:<App />,
+    element: <App />,
     children: [
       {
         path: "/",
@@ -44,23 +42,39 @@ export const router = createBrowserRouter(
         path: "/createOrganization",
         element: (
           <ProtectedRoute>
-           <CreateOrganization/>
+            <CreateOrganization />
           </ProtectedRoute>
         ),
+        children: [
+          {
+            path: "yoo",
+            element: <div className="">hiio</div>,
+          },
+        ],
       },
       {
         path: "/organization",
         element: (
           <ProtectedRoute>
-           <Organization/>
+            <Organization />
           </ProtectedRoute>
-        ),
+        )
+      },
+      {
+        
+          path: "/organization/:orgID",
+          element: (
+            <ProtectedRoute>
+              <Organizationdetail />
+            </ProtectedRoute>
+          ),
+        
       },
       {
         path: "/myOrg",
         element: (
           <ProtectedRoute>
-           <Myorg/>
+            <Myorg />
           </ProtectedRoute>
         ),
       },

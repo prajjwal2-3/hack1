@@ -8,7 +8,7 @@ function ProtectedRoute({ children }) {
 
   if (!isAuthenticated()) {
     // Redirect to login page if there's no access token
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to="/login"  />;
   }
 
   return children;
