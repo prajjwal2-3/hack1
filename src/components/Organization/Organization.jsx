@@ -42,13 +42,13 @@ function Organization () {
   return (
     <>
       <div className='md:flex justify-between '>
-        <div className='flex gap-20 my-10 mx-10  bg-gray-300 px-4 py-2 md:px-15 rounded-lg justify-center items-center h-12 font-semibold'>
+        <div className='flex gap-8 md:gap-20 my-10 mx-3 md:mx-10  bg-gray-300 px-4 py-2 md:px-15 rounded-lg  items-center h-12 font-semibold'>
             <p className='bg-[#272342] px-3 py-2 rounded-lg text-yellow-300'>Organizations</p>
             <p>Projects</p>
             <p>Events</p>
         </div>
-        <div className='mx-[15%] md:mx-3'>
-            <input type="text" className='px-4 py-2 rounded-lg md:my-10 mx-2 border-[0.1rem] border-[#272342]' />
+        <div className='mx-[3%] md:mx-3'>
+            <input type="text" className='md:px-10 px-3 py-2 rounded-lg md:my-10 mx-2 border-[0.1rem] border-[#272342]' placeholder='Serach organizations' />
             <Button className={'bg-yellow-400 px-4 py-2 rounded-lg mx-3 font-semibold'} text={'Search'} />
         </div>
       </div>
