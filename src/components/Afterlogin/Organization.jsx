@@ -1,7 +1,16 @@
 import React, { useState,useEffect } from 'react'
 import { TextField } from '@mui/material'
+import { addOrg } from '../../features/org/org';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 export default function Organization() {
+  const org = useSelector((state)=>state.user.org.name)
+  const navigate = useNavigate()
+  if(org!==''){
+navigate('/myOrg')
+  }
+  const dispatch = useDispatch()
   const [token, setToken] = useState(null);
   const [id,setid]=useState('')
   useEffect(() => {
@@ -17,6 +26,14 @@ export default function Organization() {
   const [number,setnumber]=useState('')
   const [address,setaddress]=useState('')
   const [url,seturl] = useState('')
+  const newOrg={
+    name:name,
+    description:description,
+    email:email,
+    phone:number,
+    address:address,
+    website:url
+  }
    async function createOrg(){
     try{
       const response = await axios.post('https://neighbourly-backend.vercel.app/organizations',{
@@ -34,6 +51,7 @@ export default function Organization() {
            'Content-Type': 'application/json'
         }
       })
+      dispatch(addOrg(newOrg))
       console.log('Response data:', response.data);
     }catch (error) {
       console.error('Error Creating organization:', error);

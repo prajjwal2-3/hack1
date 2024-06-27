@@ -7,7 +7,11 @@ import CreateAccount from "./components/auth/CreateAccount";
 import Organization from "./components/Afterlogin/Organization";
 import Volunteer from "./components/Afterlogin/Volunteer";
 import { isAuthenticated } from "../utils/auth";
+
+import Myorg from "./components/org/Myorg";
+import { useSelector } from "react-redux";
 function App() {
+
   return (
     <div className="min-h-screen w-full">
       <Header isAuthenticated={isAuthenticated()}/>
@@ -16,7 +20,9 @@ function App() {
   );
 }
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  
+  [
   {
     path: "/",
     element:<App />,
@@ -37,7 +43,15 @@ export const router = createBrowserRouter([
         path: "/Organization",
         element: (
           <ProtectedRoute>
-            <Organization />
+           <Organization/>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/myOrg",
+        element: (
+          <ProtectedRoute>
+           <Myorg/>
           </ProtectedRoute>
         ),
       },

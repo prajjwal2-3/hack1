@@ -2,11 +2,11 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistStore,persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import userReducer from "./features/user/user";
-
+import orgReducer from './features/org/org'
 import { combineReducers } from "@reduxjs/toolkit";
 const rootReducer = combineReducers({
     user: userReducer,
-    // other reducers go here
+    org:orgReducer
   });
   
   // Create persist config
