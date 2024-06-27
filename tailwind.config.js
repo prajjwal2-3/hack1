@@ -8,7 +8,7 @@ export default {
     extend: {
       colors:{
         "navbar":'#2B293D',
-       "body":'#F6F6F6',
+       "body":'#272342',
         "button":"#230c69"
       //   "navbar":'',
       //  "body":'#F6F6F6',#002C3E

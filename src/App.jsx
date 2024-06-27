@@ -8,23 +8,24 @@ import Banner from './components/Home/Banner'
 import TopOrg from './components/Home/TopOrganization'
 import Ctabanner from './components/Home/Ctabanner'
 import Newsletter from './components/Home/Newsletter'
+import Organization from './components/Organization/Organization'
 
 
 function App() {
   
 
   return (
-  
-  <div className="min-h-screen w-full">
-       <Header/>
-     <Hero/>
-    <Categories/>
-    <Popular/>
-    <Banner/>
-    <TopOrg/>
-    <Ctabanner/>
-    <Newsletter/>
-  </div>
+   <Organization/>
+  // <div className="min-h-screen w-full">
+  //    <Header/>
+  //    <Hero/>
+  //   <Categories/>
+  //   <Popular/>
+  //   <Banner/>
+  //   <TopOrg/>
+  //   <Ctabanner/>
+  //   <Newsletter/>
+  // </div>
     
   )
 }
