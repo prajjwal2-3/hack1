@@ -6,12 +6,12 @@ import { styled } from '@mui/material/styles';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { redirect,useNavigate } from "react-router-dom";
-import { addUser } from "../../features/user/user";
+import { addUser } from "../../redux/user/user";
 import Select from '@mui/material/Select';
 import axios from 'axios';
-import { useState } from "react";
+import { useState,useEffect } from "react";
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText('#272342'),
   backgroundColor: '#272342',
@@ -25,8 +25,14 @@ const CreateAccount = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('');
+    const user = useSelector((state)=>state.user.user.name)
+    console.log(user)
 const navigate = useNavigate()
-
+useEffect(() => {
+  if (user !== '') {
+    navigate('/organization');
+  }
+}, [user, navigate]);
 const dispatch = useDispatch()
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -43,7 +49,12 @@ const dispatch = useDispatch()
         const response = await axios.post('https://neighbourly-backend.vercel.app/auth/register', userData);
   
         if (response.status === 200) {
-            navigate(`/${role}`);
+          if(role==='organization'){
+            navigate(`/createOrganization`);
+          }else{
+            navigate('/volunteer')
+          }
+           
             const newUser = {
               name:username,
               email:email,

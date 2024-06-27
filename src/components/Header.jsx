@@ -2,17 +2,14 @@ import React from "react";
 
 import Navigationbar from "./Navigationbar";
 import BasicMenu from "./Home/Dropdown";
-
+import BasicMenu2 from "../lib/Profiledrop";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 export default function Header({ isAuthenticated }) {
   const user = useSelector((state) => state.user.user);
   console.log(user)
-  const handleLogout = () => {
-    localStorage.removeItem("access_token");
-    window.location.href = "/";
-  };
+ 
   return (
     <div className="w-full h-20 p-4 flex items-center justify-between bg-navbar shadow-md:0 1px 3px 0 ">
       <section className="font-semibold flex text-base gap-1 w-2/12 text-center text-white">
@@ -35,12 +32,8 @@ export default function Header({ isAuthenticated }) {
           </>
         ) : (
           <>
-            <button
-              className="bg-yellow-400 px-4 py-2 rounded-lg"
-              onClick={handleLogout}
-            >
-              Sign Out
-            </button>
+           
+            <BasicMenu2/>
           </>
         )}
       </section>

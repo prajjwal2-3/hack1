@@ -4,12 +4,13 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import Login from "./components/auth/Login";
 import ProtectedRoute from "./ProtectedRoute";
 import CreateAccount from "./components/auth/CreateAccount";
-import Organization from "./components/Afterlogin/Organization";
+import CreateOrganization from "./components/Afterlogin/CreateOrganization";
 import Volunteer from "./components/Afterlogin/Volunteer";
 import { isAuthenticated } from "../utils/auth";
 
 import Myorg from "./components/org/Myorg";
 import { useSelector } from "react-redux";
+import Organization from "./components/org/Organization";
 function App() {
 
   return (
@@ -40,7 +41,15 @@ export const router = createBrowserRouter(
         element: <CreateAccount />,
       },
       {
-        path: "/Organization",
+        path: "/createOrganization",
+        element: (
+          <ProtectedRoute>
+           <CreateOrganization/>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/organization",
         element: (
           <ProtectedRoute>
            <Organization/>

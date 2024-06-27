@@ -1,10 +1,10 @@
 import React, { useState,useEffect } from 'react'
 import { TextField } from '@mui/material'
-import { addOrg } from '../../features/org/org';
+import { addOrg } from '../../redux/org/org';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
-export default function Organization() {
+export default function CreateOrganization() {
   const org = useSelector((state)=>state.user.org.name)
   const navigate = useNavigate()
   if(org!==''){
