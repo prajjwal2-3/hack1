@@ -6,7 +6,9 @@ import { styled } from '@mui/material/styles';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
+import { useDispatch } from "react-redux";
 import { redirect,useNavigate } from "react-router-dom";
+import { addUser } from "../../features/user/user";
 import Select from '@mui/material/Select';
 import axios from 'axios';
 import { useState } from "react";
@@ -24,6 +26,8 @@ const CreateAccount = () => {
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('');
 const navigate = useNavigate()
+
+const dispatch = useDispatch()
     const handleSubmit = async (e) => {
       e.preventDefault();
      console.log(username)
@@ -40,8 +44,16 @@ const navigate = useNavigate()
   
         if (response.status === 200) {
             navigate(`/${role}`);
+            const newUser = {
+              name:username,
+              email:email,
+              role:role,
+              id:response.data.user_id
+            }
+            dispatch(addUser(newUser))
+            localStorage.setItem('user_id',response.data.user_id)
             localStorage.setItem('access_token',response.data.token)
-          console.log('Signup successful:', response.data.token);
+          console.log('Signup successful:', response.data);
         } else {
             alert(response.data)
           console.error('Signup failed:', response.data);
