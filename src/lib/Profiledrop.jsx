@@ -3,10 +3,14 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { removeUser } from '../redux/user/user';
+import { removeOrg } from '../redux/org/org';
 export default function BasicMenu() {
+
     const user = useSelector((state)=>state.user.user.name)
+    const dispatch = useDispatch()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -16,7 +20,10 @@ export default function BasicMenu() {
     setAnchorEl(null);
   };
   const handleLogout = () => {
+    dispatch(removeOrg())
+    dispatch(removeUser())
     localStorage.removeItem("access_token");
+    localStorage.removeItem("user_id")
     window.location.href = "/";
   };
   return (

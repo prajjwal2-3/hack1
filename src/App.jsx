@@ -65,7 +65,7 @@ export const router = createBrowserRouter(
         ),
       },
       {
-        path: "/Volunteer",
+        path: "/volunteer",
         element: (
           <ProtectedRoute>
             <Volunteer />
