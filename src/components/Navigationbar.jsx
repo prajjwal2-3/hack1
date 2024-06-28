@@ -6,7 +6,7 @@ export default function Navigationbar() {
     <>
     <div className='w-4/12 hidden md:flex gap-6 text-white font-medium text-md px-16 '>
       <Link to="/"><button>Home</button></Link>
-      <Link to="/organization"><button>Explore</button></Link>
+      <Link to="/explore"><button>Explore</button></Link>
       <Link to="/volunteer"><button>Calendar</button></Link>
       <button>ContactUs</button>
     </div>

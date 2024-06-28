@@ -14,6 +14,8 @@ import Organization from "./components/org/Organization";
 import Organizationdetail from "./components/org/Organizationdetail";
 import CreateProject from "./components/projects/CreateProject";
 import CreateVolunteer from "./components/volunteer/CreateVolunteer";
+import Explore from "./components/Explore";
+import ViewProject from "./components/projects/ViewProject";
 function App() {
   return (
     <div className="min-h-screen w-full">
@@ -74,6 +76,20 @@ export const router = createBrowserRouter([
             </ProtectedRoute>
           ),
         
+      },
+      {
+        path:'/explore',
+        element:(
+          <Explore/>
+        )
+      },
+      {
+        path:'/projects/:projectID',
+        element:(
+          <ProtectedRoute>
+            <ViewProject/> 
+          </ProtectedRoute>
+        )
       },
       {
         path: "/myOrg",
