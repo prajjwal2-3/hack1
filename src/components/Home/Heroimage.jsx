@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Heroimage() {
   return (
-    <div className='h-96 w-full bg-red-500 '>
+    <div className='h-96 w-full'>
         <div className="absolute w-full h-96 bg-black/30 flex justify-center items-center">
         <p className='text-white text-5xl font-semibold'>Explore Nearby <span className='text-yellow-400'> Volunteering</span> opportunities. Locally and Globally.</p>
         </div>

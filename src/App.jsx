@@ -12,6 +12,7 @@ import Myorg from "./components/org/Myorg";
 import { useSelector } from "react-redux";
 import Organization from "./components/org/Organization";
 import Organizationdetail from "./components/org/Organizationdetail";
+import CreateProject from "./components/projects/CreateProject";
 function App() {
   return (
     <div className="min-h-screen w-full">
@@ -77,6 +78,14 @@ export const router = createBrowserRouter([
             <Myorg />
           </ProtectedRoute>
         ),
+      },
+      {
+        path:'/createProject',
+        element:(
+<ProtectedRoute>
+            <CreateProject />
+          </ProtectedRoute>
+        )
       },
       {
         path: "/volunteer",

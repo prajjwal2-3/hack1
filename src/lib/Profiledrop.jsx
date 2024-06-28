@@ -51,6 +51,7 @@ export default function BasicMenu() {
          
         <Link><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
         <Link to="/myOrg"><MenuItem onClick={handleClose}>My Organization</MenuItem></Link>
+        <Link to="/createProject"><MenuItem onClick={handleClose}>Create new Project</MenuItem></Link>
         <MenuItem>
          <button
               className=" "
