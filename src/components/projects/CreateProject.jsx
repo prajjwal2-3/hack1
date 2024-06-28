@@ -76,7 +76,7 @@ export default function CreateProject() {
      
       <Box sx={{ maxWidth: 600, mx: 'auto', mt: 5, p: 3, boxShadow: 3, borderRadius: 2, bgcolor: 'background.paper' }}>
       <Typography variant="h4" component="h1" gutterBottom align="center">
-        Create New Project {orgID}
+        Create New Project 
       </Typography>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>

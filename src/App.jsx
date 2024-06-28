@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import Organization from "./components/org/Organization";
 import Organizationdetail from "./components/org/Organizationdetail";
 import CreateProject from "./components/projects/CreateProject";
+import CreateVolunteer from "./components/volunteer/CreateVolunteer";
 function App() {
   return (
     <div className="min-h-screen w-full">
@@ -39,19 +40,22 @@ export const router = createBrowserRouter([
         path: "/register",
         element: <CreateAccount />,
       },
+      
       {
         path: "/createOrganization",
         element: (
           <ProtectedRoute>
             <CreateOrganization />
           </ProtectedRoute>
-        ),
-        children: [
-          {
-            path: "yoo",
-            element: <div className="">hiio</div>,
-          },
-        ],
+        )
+      },
+      {
+        path: "/createVolunteer",
+        element: (
+          <ProtectedRoute>
+            <CreateVolunteer />
+          </ProtectedRoute>
+        )
       },
       {
         path: "/organization",

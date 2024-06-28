@@ -7,9 +7,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { removeUser } from '../redux/user/user';
 import { removeOrg } from '../redux/org/org';
+import { removeVolunteer } from '../redux/user/volunteer';
 export default function BasicMenu() {
 
     const user = useSelector((state)=>state.user.user.name)
+    const role = useSelector((state)=>state.user.user.role)
     const dispatch = useDispatch()
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -22,6 +24,7 @@ export default function BasicMenu() {
   const handleLogout = () => {
     dispatch(removeOrg())
     dispatch(removeUser())
+    dispatch(removeVolunteer())
     localStorage.removeItem("access_token");
     localStorage.removeItem("user_id")
     window.location.href = "/";
@@ -50,8 +53,14 @@ export default function BasicMenu() {
       >
          
         <Link><MenuItem onClick={handleClose}>Profile</MenuItem></Link>
-        <Link to="/myOrg"><MenuItem onClick={handleClose}>My Organization</MenuItem></Link>
-        <Link to="/createProject"><MenuItem onClick={handleClose}>Create new Project</MenuItem></Link>
+        {
+          role==='volunteer'?'':
+          
+          <>
+          <Link to="/myOrg"><MenuItem onClick={handleClose}>My Organization</MenuItem></Link>
+          <Link to="/createProject"><MenuItem onClick={handleClose}>Create new Project</MenuItem></Link>
+          </>
+        }
         <MenuItem>
          <button
               className=" "

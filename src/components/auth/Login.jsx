@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../../redux/user/user";
 import { addOrg } from "../../redux/org/org";
+import { addVolunteer } from "../../redux/user/volunteer";
 
 const ColorButton = styled(Button)(({ theme }) => ({
   color: theme.palette.getContrastText("#272342"),
@@ -24,8 +25,12 @@ const Login = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user.name);
   useEffect(() => {
-    if (user !== "") {
-      navigate("/organization");
+    if (user.name) {
+      if (user.role === "organization") {
+        navigate("/organization");
+      } else if (user.role === "volunteer") {
+        navigate("/volunteer");
+      }
     }
   }, [user, navigate]);
   async function login(e) {
@@ -82,7 +87,25 @@ const Login = () => {
             }
             
           } else {
+            try{
+              const access_token = localStorage.getItem('access_token');
+              const volunteer = await axios.get(`https://neighbourly-backend.vercel.app/volunteers/users/${user_id}`,{
+                headers:{
+                  'access_token':access_token
+                }
+              })
+            const volun = {
+              name:user.data.username,
+              user_id:user_id,
+              bio:volunteer.data.bio,
+              skills:volunteer.data.skills,
+              availability:volunteer.data.availability
+            }
+            dispatch(addVolunteer(volun))
             navigate("/volunteer");
+            }catch(error){
+              alert(error+'error fetching volunteer details')
+            }
           }
         } catch (error) {
           alert(error + "error fetch user details");

@@ -4,11 +4,13 @@ import storage from "redux-persist/lib/storage";
 import userReducer from "./redux/user/user";
 import orgReducer from './redux/org/org'
 import allorgReducer from './redux/org/allorg'
+import volunteerReducer from './redux/user/volunteer'
 import { combineReducers } from "@reduxjs/toolkit";
 const rootReducer = combineReducers({
     user: userReducer,
     org:orgReducer,
-    allorg:allorgReducer
+    allorg:allorgReducer,
+    volunteer:volunteerReducer
   });
   
   // Create persist config

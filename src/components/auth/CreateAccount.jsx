@@ -29,8 +29,12 @@ const CreateAccount = () => {
     console.log(user)
 const navigate = useNavigate()
 useEffect(() => {
-  if (user !== '') {
-    navigate('/organization');
+  if (user.name) {
+    if (user.role === "organization") {
+      navigate("/organization");
+    } else if (user.role === "volunteer") {
+      navigate("/volunteer");
+    }
   }
 }, [user, navigate]);
 const dispatch = useDispatch()
@@ -52,7 +56,7 @@ const dispatch = useDispatch()
           if(role==='organization'){
             navigate(`/createOrganization`);
           }else{
-            navigate('/volunteer')
+            navigate('/createVolunteer')
           }
            
             const newUser = {
