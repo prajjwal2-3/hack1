@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 export default function Organizationdetail() {
   const { orgID } = useParams();
   const organizations = useSelector((state) => state.user.allorg.organizations);
@@ -62,13 +63,14 @@ export default function Organizationdetail() {
         </section>
       </section>
       <p className="text-2xl px-20 my-10 font-semibold text-slate-800">
-        Events
+        Projects
       </p>
       <div className="px-20 flex flex-wrap">
         {projects.length > 0 ? (
           projects?.map((e, index) => (
+            <Link to={`/projects/${e?._id}`} key={index}>
             <section
-              key={index}
+              
               className="bg-blue-500 rounded-2xl hover:scale-110 duration-200 m-5 w-72 h-56"
             >
               <div className="bg-white/50 w-full h-20"></div>
@@ -84,13 +86,14 @@ export default function Organizationdetail() {
                 </p>
               </div>
             </section>
+            </Link>
           ))
         ) : (
           <section className="bg-blue-500 rounded-2xl hover:scale-110 duration-200 m-5 w-72 h-56">
             <div className="bg-white/50 w-full h-20"></div>
             <div className="p-2">
               <p className="text-xl font-semibold text-slate-800">
-                No Events to show!!
+                No Projects to show!!
               </p>
             </div>
           </section>
