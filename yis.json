@@ -1,0 +1,32 @@
+[
+    {
+        "_id": "667d50d404d10db503d435e5",
+        "name": "Developer",
+        "__v": 0
+    },
+    {
+        "_id": "667d50df04d10db503d435e7",
+        "name": "Post",
+        "__v": 0
+    },
+    {
+        "_id": "667d50e804d10db503d435e9",
+        "name": "SocialService",
+        "__v": 0
+    },
+    {
+        "_id": "667d50ec04d10db503d435eb",
+        "name": "SS",
+        "__v": 0
+    },
+    {
+        "_id": "667d511004d10db503d435ee",
+        "name": "clean",
+        "__v": 0
+    },
+    {
+        "_id": "667d511f04d10db503d435f0",
+        "name": "greenIndia",
+        "__v": 0
+    }
+]
